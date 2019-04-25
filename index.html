@@ -1,0 +1,99 @@
+<!DOCTYPE html >
+<head>
+    <title>Map using autocomplete</title>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=Enter your Apikey&libraries=places"></script>
+    <script
+    src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-app="app"  ng-controller="appCtrl">  
+  
+<h5>Google autocomplete Maps</h5>
+
+    <div class="text-right">
+        <div class="input-append text-right">
+            <input type="text" id="searchTextField"
+             ng-model="search" style="width: 160px;" 
+             ng-selected="geoCode(search)" 
+             ng-active="search.length == 0" title="search" />
+        </div>
+    </div>
+    
+    <app-map style="float: right; height: 600px; width: 1150px; margin: 5px; margin-top: -60px"
+        center="loc"
+        id="map"
+        markers="cities"> 
+    </app-map>
+</div>
+    <h5>Results:</h5>
+    <ul style="margin-left: -23px;">
+      <li>Lat: {{ lat }}</li>
+      <li>Lo: {{ lon }}</li>
+    </ul>
+    <div class="container-fluid">
+        <div class="span3 btn" 
+            ng-repeat="a in cities"
+            ng-click="gotoLocation(a.lat, a.lon)">
+            <b>{{a.place}}</b>
+        </div>
+    </div>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <button class="btn" type="button" ng-click="geoCode(search)" ng-disabled="search.length == 0" title="search" >
+              &nbsp;<i class="icon-search"></i>Where is this place?
+            </button> -->
+            <!-- <button class="btn" type="button" ng-click="gotoCurrentLocation()" title="current location">
+              &nbsp;<i class="icon-home"></i>Where am I now?
+            </button> -->
